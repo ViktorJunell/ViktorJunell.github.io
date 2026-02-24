@@ -5,12 +5,13 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  
   <div id="test" class="test-class" data-visibility="" style="">
     <div id="header" class="header-class">
       <div id="home-button" class="button-class">
         <p>Home</p> 
       </div>
-      <div id="specialization-button" class="button-class" href="viktorjunell.github.io/Test">
+      <div id="specialization-button" class="button-class" onclick="location.href='/Test'">
         <p>Specialization</p> 
       </div>
       <div id="projects-button" class="button-class">
@@ -21,5 +22,15 @@
       <p>TEMP</p>
     </div>
   </div>
+
+  <script>
+    function Test()
+    {
+      location.href = "/Test"
+    }
+  </script>
+
 </body>
+
+
 </html>
