@@ -1,12 +1,12 @@
 /* CSS styles */
 h1 {
 font-family: Impact, sans-serif;
-color: #CE5937;
+color: #a56d5c;
 }
 
 body {
   height: 200%;
-  background-image: linear-gradient(90deg, rgb(171, 26, 26) 8%, rgb(66, 95, 199) 20%, rgb(66, 95, 199) 80%, rgb(171, 26, 26) 92%)
+  background-image: linear-gradient(90deg, rgb(119, 82, 103) 8%, rgb(66, 95, 199) 20%, rgb(66, 95, 199) 80%, rgb(204, 231, 47) 92%)
 }
 
 .header-class {
