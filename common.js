@@ -21,6 +21,7 @@ div.className = "header-class"
 var homeButton = document.createElement("div")
 homeButton.id = "home-button"
 homeButton.className = "button-class"
+specializationButton.addEventListener("click", () => {location.href='/'})
 homeButton.innerText = "Home"
 
 var specializationButton = document.createElement("div")
