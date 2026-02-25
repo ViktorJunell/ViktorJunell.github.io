@@ -45,14 +45,22 @@ body {
 
 .button-class li
 {
-  padding:10px;
+  /* padding:10px; */
+  display: block;
   position:relative;
   list-style:none;
-  text-align:left;
+  text-align:center;
   z-index: 1;
 }
 
 .button-class a 
+{
+  display: block;
+  color: rgb(255, 255, 180) !important;
+  text-decoration: none !important;
+  padding:10px;
+}
+.button-class ul>li>a 
 {
   color: rgb(255, 255, 180) !important;
   text-decoration: none !important;
