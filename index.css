@@ -60,12 +60,6 @@ body {
   text-decoration: none !important;
   padding:10px;
 }
-.button-class ul>li>a 
-{
-  color: rgb(255, 255, 180) !important;
-  text-decoration: none !important;
-  padding:10px;
-}
 
 .new-button-class {
   color: rgb(255, 255, 180);
