@@ -1,45 +1,62 @@
-// class header extends HTMLElement 
-// {
-//     constructor() {
-//       super();
-//     //   var base = document.getElementById("header");
-// // content = 
-//     //   this = document.querySelector('link[rel="import"]').import
-//     //   document.innerHTML = 
-//     //   base.innerHTML = document.querySelector('test.html').import
-//     //   let templateContent = template.content;
-
-//     //   const shadowRoot = this.attachShadow({ mode: "open" });
-//     //   shadowRoot.appendChild(document.importNode(templateContent, true));
-//     }
-
-// }
 var div = document.getElementById("header")
-//  = document.createElement("div")
-// div.id = "header"
-// div.className = "header-class"
 
-var homeButton = document.createElement("div")
-homeButton.id = "home-button"
-homeButton.className = "button-class"
-homeButton.addEventListener("click", () => {location.href='/'})
-homeButton.innerText = "Home"
 
-var specializationButton = document.createElement("div")
-specializationButton.id = "specialization-button"
-specializationButton.className = "button-class"
-specializationButton.addEventListener("click", () => {location.href='/Test'})
-specializationButton.innerText = "Specilization"
-// specializationButton.onclick = 
+var button = document.createElement("div")
+button.id = "home-button"
+button.className = "button-class"
 
-var projectsButton = document.createElement("div")
-projectsButton.id = "projects-button"
-projectsButton.className = "button-class"
-projectsButton.innerText = "Projects"
-div.appendChild(homeButton)
-div.appendChild(specializationButton)
-div.appendChild(projectsButton)
+var text = document.createElement("a")
+text.href = '/'
+text.innerText = "Home"
+button.append(text)
 
-// document.body.appendChild(div)
-// customElements.define("custom-header", header)
-// document.getElementById("header").innerHTML = '<div id="header" class="header-class">\n    <div id="home-button" class="button-class">\n    <p>Home</p> \n    </div>\n    <div id="specialization-button" class="button-class" onclick="location.href=">\n    <p>Specialization</p> \n    </div>\n    <div id="projects-button" class="button-class">\n    <p>Game Projects</p> \n    </div>\n</div>'
+div.appendChild(button)
+
+
+
+button = document.createElement("div")
+button.id = "specialization-button"
+button.className = "button-class"
+
+text = document.createElement("a")
+text.href = '/Test'
+text.innerText = "Specilization"
+button.append(text)
+
+div.appendChild(button)
+
+
+
+button = document.createElement("div")
+button.id = "projects-button"
+button.className = "button-class"
+
+text = document.createElement("a")
+// text.href = '/'
+text.innerText = "Projects"
+button.append(text)
+
+var projects = document.createElement("ul")
+projects.id = "projects"
+button.append(projects)
+
+var project = document.createElement("li")
+project.id = "project-5"
+project.className = "new-button-class"
+text = document.createElement("a")
+text.href = '/Projects/5'
+text.innerText = "Project 5"
+project.append(text)
+projects.appendChild(project)
+
+project = document.createElement("li")
+project.id = "project-6"
+project.className = "new-button-class"
+text = document.createElement("a")
+text.href = '/Projects/6'
+text.innerText = "Project 6"
+project.append(text)
+projects.appendChild(project)
+
+div.appendChild(button)
+
