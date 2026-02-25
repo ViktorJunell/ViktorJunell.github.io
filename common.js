@@ -19,7 +19,7 @@ button.id = "specialization-button"
 button.className = "button-class"
 
 text = document.createElement("a")
-text.href = '/Test'
+text.href = '/Specialization'
 text.innerText = "Specilization"
 button.append(text)
 
