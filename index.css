@@ -1,19 +1,30 @@
 /* CSS styles */
 h1 {
-font-family: Impact, sans-serif;
-color: #CE5937;
+  font-family: Impact, sans-serif;
+  color: #CE5937;
 }
 
 body {
   height: 200%;
-  background-image: linear-gradient(90deg, rgb(171, 26, 26) 8%, rgb(66, 95, 199) 20%, rgb(66, 95, 199) 80%, rgb(171, 26, 26) 92%)
+  background-image: linear-gradient(90deg, rgb(6, 31, 100) 8%, rgb(12, 45, 138) 20%, rgb(12, 45, 138) 80%, rgb(6, 31, 100) 92%);
+  color: rgb(20, 20, 20);
 }
 
 .header-class {
-  margin-top: 5%;
+  background-color: rgb(4, 27, 88);
+  /* margin-top: 1%; */
+  padding-top: 1%;
+  padding-bottom: 1%;
   display: flex;
   justify-content: center;
   align-items: baseline;
+  position: fixed;
+  width: 100%;
+  height: 4%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .button-class {
@@ -50,7 +61,6 @@ body {
   position:relative;
   list-style:none;
   text-align:center;
-  z-index: 1;
 }
 
 .button-class a 
@@ -85,15 +95,33 @@ body {
 }
 
 .window-class {
-  align-self: center;
+  /* display: flex; */
+  /* justify-self: center; */
+  /* place-self: ; */
+  /* align-self: center; */
+  /* justify-content: center; */
+  /* align-items: center; */
   position: absolute;
-  top: 0%;
-  height: 80%;
+  /* top: 0%; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  height: 1800px;
   width: 50%;
   
-  margin-top: 8%;
-  margin-left: 25%;
-  background-color: color(display-p3 0.8 0.8 0.7 / 1);
+  /* margin-left: 0 auto;
+  margin-right: 0 auto; */
+  /* margin: 0 auto;  */
+  margin-top: 4%;
+  /* margin-top: 8%; */
+  /* margin-left: 25%; 
+  margin-right: 25%; */
+  padding: 1%;
+  background-color: rgb(136, 168, 255);
+  /* background-color: color(display-p3 0.8 0.8 0.7 / 1); */
  
-  box-shadow: 5px 8px;
+  box-shadow: 0px 0px 5px 8px rgb(6, 31, 100);
 }
