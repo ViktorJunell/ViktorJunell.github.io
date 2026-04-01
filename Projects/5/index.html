@@ -11,15 +11,36 @@
   
   <div id="test" class="test-class" data-visibility="">
     <div id="header" class="header-class"></div>
-     <!-- <custom-header></custom-header> -->
-    <!-- <script src="common.js"></script> -->
 
     <div id="window" class="window-class">
       <p>The fifth project was the first one in which we were working in our final teams, which made for a foundation for the coming projects as well.</p>
       <p>During it we were tasked to customize and improve upon the school's game engine, in addition to creating a game based on diablo 3, in a series called Spite.</p>
-      <p>Previous years have also made their own additions to Spite, and thus we were tasked with creating a game which conformed to the graphical style in addition to being a compelling game experience.</p>
-      <p>During the project I was mostly tasked with working on a variety of tasks, but the main focus was on implementing audio from Wwise.</p>
-      <p>This meant I spent a lot of my time communicating with students from the Audio Production Academy in stockholm. They were in charge of producing audio for the game, and as such I would talk to them about how to implement stuff and the like.</p>
+      <p>
+        Previous years have also made their own additions to Spite, and thus we were tasked with creating a game which conformed to the graphical 
+        style in addition to being a compelling game experience.
+      </p>
+      <p>
+        During the project I was mostly tasked with working on a variety of tasks, but the main focus for most of it was implementing audio from Wwise.<br>
+        This meant I spent a lot of my time communicating with students from the Audio Production Academy (APA) in stockholm. They were in charge of producing 
+        audio for the game, and as such I would talk to them about how to implement stuff and the like.<br>
+        In order to facilitate this endeavour I had to learn a lot about how to communicate with Wwise and translate things into code adequately. 
+        I thus ended up creating an Audio Player which could dynamically create and destroy audio objects and instances in game as they were required 
+        and subsequently used up.<br>
+        Despite having been a shaky implementation which I've been able to improve on since then this allowed a simple structure for playing up any desired
+        sounds effects whenever, and whereever you need them, without needing to worry about attaching them to objects and so manually.<br>
+        The two biggest issues I encountered were largely caused by my lack of experience with how Wwise worked and could be communicated with, firstly
+        I just failed to consider making use of the Wwise_IDs.h file which contains all available sounds, and states defined as simple unsigned integers,
+        instead we ended up having to manually typing out the names of events we wanted. This didn't prevent any sort of functionality, but it did make it
+        more cumbersome to implement it such that sounds were played in game, leading to me having to spend a bunch of time implementing the various sounds
+        given it was not intuitive.<br>
+        The second issue I encountered was more problematic, given the limited amount of time available to learn about and implement Wwise I didn't manage to
+        figure out how to stop sounds properly using code. This meant that the game lacked a dedicated method for stopping sounds of various categories, 
+        luckily the partners we were working with at APA were able to create dedicated Events for stopping music and sound effects. This was an unfortunate 
+        workaround, but given the limited time I had to spend on implementing Audio it's hardly surprising that I would end up missing stuff like that.
+      </p>
+      <p>
+      </p>
+      <p>ECS</p>
       <p>ECS</p>
     </div>
   </div>
