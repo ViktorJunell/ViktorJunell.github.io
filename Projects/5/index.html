@@ -13,12 +13,18 @@
     <div id="header" class="header-class"></div>
 
     <div id="window" class="window-class">
-      <p>The fifth project was the first one in which we were working in our final teams, which made for a foundation for the coming projects as well.</p>
-      <p>During it we were tasked to customize and improve upon the school's game engine, in addition to creating a game based on diablo 3, in a series called Spite.</p>
+      <p>
+        The fifth project was the first one in which we were working in our final teams, which made for a foundation for the coming projects as well.<br>
+        During it we were tasked to customize and improve upon the school's game engine, in addition to creating a game based on diablo 3, in a series called Spite.<br>
+        The finished game was name A Dragon's Wake, the story was centered on a monk, travelling up a mountain, defeating corrupted people in the forms of fish and
+        healing their souls in the process of reaching the dragon, which was the cause of the corruption.
+      </p>
+
       <p>
         Previous years have also made their own additions to Spite, and thus we were tasked with creating a game which conformed to the graphical 
         style in addition to being a compelling game experience.
       </p>
+
       <p>
         During the project I was mostly tasked with working on a variety of tasks, but the main focus for most of it was implementing audio from Wwise.<br>
         This meant I spent a lot of my time communicating with students from the Audio Production Academy (APA) in stockholm. They were in charge of producing 
@@ -38,10 +44,17 @@
         luckily the partners we were working with at APA were able to create dedicated Events for stopping music and sound effects. This was an unfortunate 
         workaround, but given the limited time I had to spend on implementing Audio it's hardly surprising that I would end up missing stuff like that.
       </p>
+
       <p>
+        My other major focus was on developing the boss fight, the boss was a large snake-like dragon, which would slither over the stage in between executing
+        various attacks. This meant needing to figure out how to blend together various different attacks, and very importantly, making sure that the boss' hitboxes
+        would move along with the boss, such that the player would not end up swinging at the boss, and missing simply because the hitbox didn't match the physical model.<br>
+        This meant having to calculate the position and rotation of all the bones used when animating the model in order to track where the bone a collider was 
+        attached to was in space, and making sure that the collider followed it.<br>
+        This was not something which was adequately planned for, and required reading the position of the bones in the model once per frame for every collider which
+        was affected, however the result is hard to argue with, as the finished colliders follow along with the model very accurately.
       </p>
-      <p>ECS</p>
-      <p>ECS</p>
+
     </div>
   </div>
 

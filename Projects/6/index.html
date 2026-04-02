@@ -15,10 +15,48 @@
     <!-- <script src="common.js"></script> -->
 
     <div id="window" class="window-class">
-      <p>During the sixth project we continued to work in our groups, giving us a good opportunity to get used to working in a more consistent team compared to how much we've switched around earlier in the education.</p>
-      <p>Audio</p>
-      <p>Scripting</p>
-      <p>ECS</p>
+      <p>
+        During the sixth project we continued to work in our groups, giving us a good opportunity to get used to working in a more consistent team compared to how much we've switched 
+        around earlier in the education.
+      </p>
+
+      <p>
+        Coming into this project we knew as a group that we were planning to lean into a more ECS like structure for the game, during the previous project we had resorted to old habits
+        and ended up treating some classes as though they were basically their own objects, storing a bunch of data of their own and complocating the flow of the code.<br>
+        As such we knew that we wanted to hammer home and lean into building something which actually worked as an ECS structure. For my part I was mostly working on implementing 
+        a flexible visual scripting system, making sure to minimize any further complications in the flow of the code, making sure each node did the thing it was meant to, and
+        accessed only the data necessary in order to achieve that task.<br>
+        I believe that my work on implementing many different nodes did wonders to hammer home that thought process, as the nodes themself never really store their own data, 
+        outside of their inputs, and outputs, and this really did force me to consider what was, and was not necessary to achieve any given task in an efficient manner. And the 
+        efficiency was important, due to an unfortunate prevalance of sickness we ended up loosing out on a lot of time from our programmers, including myself, and thus a lot
+        of the code running on the cpu is directly connected to and based on our scripting system, so any unnecessary code in there could greatly hurt performance.
+      </p>
+
+      <p>
+        Roughly after a third of the project had passed I was informed of the necessity of working on the visual scripting in our engine. It is something which was implemented
+        at a base level early on, however as it became obvious that it would be too inefficient for programmers to directly create everything, so I had to get up to speed quick and
+        get to work on adding more flexibility to various different nodes, and adding in new functionality.<br>
+        Among others I ended up quickly implementing basic support for the utilization of accessing and changing transforms, getting references to Entities in game, and, what ended up
+        being most challenging, implementing the ability to create, and call custom events, both within scripts, and between scripts. It turned out to be quite difficult to 
+        access custom events which were created in another script, so that took a while, but in the end I did manage to achieve something passable, which allowed us to create scripts
+        to handle many complex tasks.
+      </p>
+      <!-- Images of custom events -->
+
+      <!-- Prefabs -->
+
+      <p>
+        I also continued developing my Audio Player, from early on I made the decision to rewrite how it reads and saves audio events, during the development of Spite A Dragon's Wake
+        we made use of nlohmann's json library in order to read the json which can be generated when creating a Soundbank, this was a convenient solution, however it lead to
+        the creation of a bunch of different files to keep track of. Focusing on this also meant calling for sound events using their names, meaning you had to look those up 
+        if you ever wanted to add in a new audio events.<br>
+        As a result, I planned to cut it down to simply need the Wwise_IDs.h file for everything. As such I ended up learning about writing my own code for iterating through 
+        the file, treating it as a text file, and saving all the audio events in it into the game itself, as a result I was able to maintain debug functionality for playing any
+        sounds in runtime, by simply using the names, meanwhile I implemented the header file for usage in the code, making it much easier to find the names of audio events, and 
+        failing to build in case you made a mistake with the name, instead of the game running as usual, just without the sound playing.<br>
+        I also learned about how to stop sounds, and Integrated it with our scripting system, allowing non-programmers to implement sound in various contexts without having to
+        worry about the programming behind it, simply choose a sound, and optionally a position.
+      </p>
     </div>
   </div>
 
