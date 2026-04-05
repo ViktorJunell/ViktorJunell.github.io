@@ -96,22 +96,18 @@
       </div>
       
 
-      <a onClick="resetGif('gif1'), resetGif('gif2')">RESET</a>
-
       <div class="row">
-          <img id="gif1" src="Hitboxes.gif" style="width:100%; margin:1%">  
-          <img id="gif2" src="HitboxesHealth.gif" style="width:100%; margin:1%">  
-          <!-- <img tag="gif2" src="Hitboxes.gif" style="width:100%; margin:1%">   -->
+        <img src="Hitboxes.gif" style="width:512px; margin:1%">
+        <p1>
+          My other major focus was on developing the boss fight, the boss was a large snake-like dragon, which would slither over the stage in between executing
+          various attacks. This meant needing to figure out how to blend together various different attacks, and very importantly, making sure that the boss' hitboxes
+          would move along with the boss, such that the player would not end up swinging at the boss, and missing simply because the hitbox didn't match the physical model.<br>
+          This meant having to calculate the position and rotation of all the bones used when animating the model in order to track where the bone a collider was 
+          attached to was in space, and making sure that the collider followed it.<br>
+          This was not something which was adequately planned for, and required reading the position of the bones in the model once per frame for every collider which
+          was affected, however the result is hard to argue with, as the finished colliders follow along with the model very accurately.
+        </p1>
       </div>
-      <p>
-        My other major focus was on developing the boss fight, the boss was a large snake-like dragon, which would slither over the stage in between executing
-        various attacks. This meant needing to figure out how to blend together various different attacks, and very importantly, making sure that the boss' hitboxes
-        would move along with the boss, such that the player would not end up swinging at the boss, and missing simply because the hitbox didn't match the physical model.<br>
-        This meant having to calculate the position and rotation of all the bones used when animating the model in order to track where the bone a collider was 
-        attached to was in space, and making sure that the collider followed it.<br>
-        This was not something which was adequately planned for, and required reading the position of the bones in the model once per frame for every collider which
-        was affected, however the result is hard to argue with, as the finished colliders follow along with the model very accurately.
-      </p>
 
     </div>
   </div>

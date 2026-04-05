@@ -60,3 +60,15 @@ projects.appendChild(project)
 
 div.appendChild(button)
 
+
+// reset an animated gif to start at first image without reloading it from server.
+// Note: if you have the same image on the page more than ones, they all reset.
+var transparent1PxGif = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+function resetGif(id) {
+    var img = document.getElementById(id);
+    var imageUrl = img.src;
+    // img.src.clear();
+    img.src = transparent1PxGif;
+    img.offsetHeight;
+    img.src = imageUrl;
+};
