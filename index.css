@@ -114,13 +114,14 @@ p {
 .button-class a 
 {
   display: block;
-  color: rgb(255, 255, 180)!important;
+  color: #bce1ff;
   text-decoration: none!important;
   padding:10px;
 }
 
 .new-button-class {
-  color: rgb(255, 255, 180);
+  display: block;
+  color: #bce1ff;
   text-align: center;
   cursor: pointer;
   
