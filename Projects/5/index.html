@@ -51,50 +51,50 @@
 
       <div class="row">
         <img src="AudioPlayerInterface.png" width="150%" class="left">
-        <p1>
+        <p>
           This was the interface I landed on in the end, it ended up including some useful functions for most circumstances that were likely to show up during gameplay.<br>
           The least obvious functions I imagine is the ones regarding triggers, they were implemented as a way to trigger changes in the music states during gameplay, 
           this was used in order to modify the music in different sections of levels. You'd simply have to register a trigger's name to an en Entity ID, then when it was
           triggered the game would call ActivateTrigger using the Entity ID of the trigger, which could be used to call the appropriate trigger event.<br>
           LoadSceneAudio simply found any placed out audio objects in the scene and added them into the Wwise scene, whereas UnLoadSceneAudio stopped all instances
           of environmental sounds, to ensure sounds wouldn't persist between levels.<br>
-        </p1>
+        </p>
       </div>
         
       <div class="row">
         <img src="UpdateSound.png" width="300%" class="left">  
-        <p1>
+        <p>
           UpdateSound() was the function used to both update the position of the player, and the audio source used for testing spatial audio. In retrospect I realize
           that the test audio portion should likely have been nested in a #if statement to ensure it's not included in retail builds, as it is inaccessible there regardless.<br>
           Other than that it updated the game volume, which included a simple implementation of a debug menu for handling audio things, and then rendered the audio itself in Wwise.
-        </p1>
+        </p>
       </div>
 
       <div class="row">
         <img src="StopSound.png" width="140%"  class="left">  
-        <p1 style="width: 100%">
+        <p style="width: 100%">
           This is a bit of an example regarding problem solving necessary due to the lack of time available for development, since I had never made use of Wwise before I 
           ended up struggling to understand many things, and as a part of that I somehow missed out on how to stop individual sounds. As you could imagine this would present 
           a bit of a problem in any game.<br>
           In order to resolve this I asked our friends over at APA for help, thankfully they were knowledgable enough to be able to solve the issue using dedicated Audio Events
           which stopped the different categories of sound we made use of, and as such I was able to implement this simple function which could stop any category of sound based 
           on an enum input.
-        </p1>
+        </p>
         <div class="column" width="100%">
           <img src="AudioCallback.png" width="100%" class="center">  
-          <p1>
+          <p>
             One thing which I was initially unfamiliar with but managed to figure out in time was the usage of callbacks for audio objects. This was a relatively necessary thing,
             since I didn't want sounds to move along with entities for things like footsteps and jump attacks, as these would sound really strange if they were moved during activation.
             This necessitated to the best of my knowledge the usage of multiple Game Objects in Wwise, one per sound to ensure consistent positioning, and in order to ensure that the 
             game objects didn't remain and clutter up Wwise I had to figure out callbacks, in order to unregister them after the sound was over.
-          </p1>
+          </p>
         </div>
       </div>
       
 
       <div class="row">
         <img src="Hitboxes.gif" style="width:512px; margin:1%">
-        <p1>
+        <p>
           My other major focus was on developing the boss fight, the boss was a large snake-like dragon, which would slither over the stage in between executing
           various attacks. This meant needing to figure out how to blend together various different attacks, and very importantly, making sure that the boss' hitboxes
           would move along with the boss, such that the player would not end up swinging at the boss, and missing simply because the hitbox didn't match the physical model.<br>
@@ -102,7 +102,7 @@
           attached to was in space, and making sure that the collider followed it.<br>
           This was not something which was adequately planned for, and required reading the position of the bones in the model once per frame for every collider which
           was affected, however the result is hard to argue with, as the finished colliders follow along with the model very accurately.
-        </p1>
+        </p>
       </div>
 
     </div>
