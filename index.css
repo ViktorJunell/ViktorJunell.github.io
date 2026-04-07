@@ -16,7 +16,7 @@ body {
 p {
   /* display: flex; */
   /* flex-direction: row; */
-  /* width: auto; */
+  width: 80%;
   /* height: auto; */
   /* margin: 1%; */
   align-self: center;
