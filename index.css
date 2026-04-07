@@ -9,7 +9,7 @@ h1 {
 
 body {
   height: 200%;
-  background-image: linear-gradient(90deg, rgb(14, 38, 104) 8%, rgb(47, 55, 75) 20%,  rgb(4, 25, 83) 80%,rgb(14, 38, 104) 92%);
+  background-image: linear-gradient(90deg, rgb(14, 38, 104) 8%, rgb(4, 25, 83) 20%,  rgb(4, 25, 83) 80%,rgb(14, 38, 104) 92%);
   color: rgb(20, 20, 20);
 }
 
