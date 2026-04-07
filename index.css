@@ -1,22 +1,36 @@
 /* CSS styles */
 h1 {
-  font-family: Impact, sans-serif;
-  color: #CE5937;
+  /* font-family: Impact, sans-serif; */
+  font-size: 400%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #bce1ff;
 }
 
 body {
   height: 200%;
-  background-image: linear-gradient(90deg, rgb(6, 31, 100) 8%, rgb(12, 45, 138) 20%, rgb(12, 45, 138) 80%, rgb(6, 31, 100) 92%);
+  background-image: linear-gradient(90deg, rgb(14, 38, 104) 8%, rgb(4, 25, 83) 20%,  rgb(4, 25, 83) 80%,rgb(14, 38, 104) 92%);
   color: rgb(20, 20, 20);
 }
 
-p1 {
+p {
   /* display: flex; */
   /* flex-direction: row; */
   /* width: auto; */
   /* height: auto; */
-  margin: 1%;
+  /* margin: 1%; */
   align-self: center;
+  color: #bce1ff;
+  /* color: black; */
+  text-decoration: none!important;
+  /* text-decoration-color: transparent; */
+  /* -moz-text-decoration-color: azure; */
+  /* d */
+}
+
+a {
+  /* text-decoration-color: transparent; */
+  text-decoration: none!important;
 }
 
 .header-class {
@@ -52,7 +66,29 @@ p1 {
   width: 15%;
 
   cursor: pointer;
+}
+
+.project {
+  /* color: rgb(255, 255, 180); */
+  background-color: color(display-p3 0 0 0.2 / 1);
+
+  display: flex;
+  flex-direction: column;
   
+  justify-content: center;
+  align-items: normal;
+  text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  border-radius: 5%;
+
+  cursor: pointer;
+}
+
+.project:hover {  
+  background-color: color(display-p3 0.1 0.1 0.4 / 1);
 }
 
 .button-class ul
@@ -75,8 +111,8 @@ p1 {
 .button-class a 
 {
   display: block;
-  color: rgb(255, 255, 180) !important;
-  text-decoration: none !important;
+  color: rgb(255, 255, 180)!important;
+  text-decoration: none!important;
   padding:10px;
 }
 
@@ -129,10 +165,10 @@ p1 {
   /* margin-left: 25%; 
   margin-right: 25%; */
   padding: 1%;
-  background-color: rgb(136, 168, 255);
+  /* background-color: rgb(136, 168, 255); */
   /* background-color: color(display-p3 0.8 0.8 0.7 / 1); */
  
-  box-shadow: 0px 0px 5px 8px rgb(6, 31, 100);
+  /* box-shadow: 0px 0px 5px 8px rgb(6, 31, 100); */
 }
 
 .left {
