@@ -28,10 +28,10 @@ p {
   /* d */
 }
 
-a {
+/* a { */
   /* text-decoration-color: transparent; */
-  text-decoration: none!important;
-}
+  /* text-decoration: none!important; */
+/* } */
 
 .header-class {
   background-color: rgb(4, 27, 88);
@@ -81,12 +81,15 @@ a {
 
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 30%;
   border-radius: 5%;
 
   cursor: pointer;
 }
 
+.project a {
+  text-decoration: none!important;
+}
 .project:hover {  
   background-color: color(display-p3 0.1 0.1 0.4 / 1);
 }

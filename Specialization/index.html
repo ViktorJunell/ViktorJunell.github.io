@@ -12,10 +12,69 @@
 
     <div id="window" class="window-class">
       <p>
-        During 8 weeks starting in february I have been working at creating a Fluid Simulation based on a fixed grid.
+        During 8 weeks starting in february I have been working at creating a Fluid Simulation based on a fixed grid. This has 
+        involved learning a lot of new things in the effort to piece things together to a functioning program.
       </p>
       <p>
-        Under Contruction.
+        Starting out I was inspired by videos from <a href="https://www.youtube.com/@SebastianLague">Sebastian Lague</a>, he makes a variety
+        of different coding videos about how he creates different projects. I had both seen his videos about creating a fluid simulation based on particles, 
+        and later his video on simulating smoke, this video made use of what to me seemed to be a more novel method of simulating fluids, namely, treating
+        the fluid as a fixed grid, where each cell contains fluid, and each edge between cells stores data about velocities.<br>
+        This was incredibly fascinating to me, and combined with the fact that I've had a major interest in experimenting with voxels this really appealed to me.
+        As I started out I ended up basing my first iteration of the simulation on a 
+        <a href="https://www.youtube.com/watch?v=iKAVRgIrUOU">video about writing an Eulerian fluid simulation by Ten Minute Physics</a>, this video made it surprisingly
+        easy to start out creating a working baseline 2d fluid simulation, admittedly it was a simulation of fluid in a fully enclosed space, 
+        which wasn't the goal I had in mind, but it made for a great start.
+      </p>
+      <p>
+        My next step was to adapt this simulation to 3d, in order to do so I ended up having to do a bunch of work optimizing the simulation, one of the main issues was
+        overhauling the rendering. At the time I had been using a method of rendering which made use of build in functions in the engine provided by the school to draw lines
+        to represent the flow of fluid, and draw circles to represent whether the net flow into and out of a cell was positive, negative, or neutral. This was very slow to render,
+        and as such I had to overhaul this before moving to 3d, since 3d would greatly increase the number of cells and massively inscrease the number of edges.<br>
+        As such I got to work writing a shader to render the 2d grid in 3d based on the amount of fluid present in each cell, I based the shader on one I made when experimenting
+        with rendering a voxel world, which was a .hlsl pixel shader which traced a ray from the origin pixel into the world until it reached a maximum distance.<br>
+        I was able to adapt it relatively easily, changing the behaviour when a cell was collided with to add an amount of colour based on the fluid present in the cell, 
+        since cells which weren't completely full to begin with would otherwise block vison to cells behind it, which would've caused the fluid to look really strange, either they
+        would've resulted in a transparent block which caused you to see through parts of the fluid which were meant to be full, or every cell which contained any fluid would've 
+        appeared like a full block, potentially causing flickering when small amounts are pushed in and back out of cells.
+      </p>
+      <p>
+        After implementing the new rendering system I got to work on trying to adapt the simulation to 3d more properly, and here I did end up encountering some issues. The 
+        videos I had used as a reference were conclusively focused on fluid simulations within an enclosed area, where the whole thing was filled with the same fluid,
+        but since I was trying to create a simulation of a liquid more specifically this necessarily involved being able to simulate how it is affected by gravity, and thus
+        seeing it fall, and spread out once it hit solid ground. <br>
+        This turned out to be a very different task compared to what I had done when following along with the videos, no longer could I seem to rely on simply enforcing 
+        incompressibility and advecting the fluid around, so I, after much experimentation, came to the conclusion that I would have to overhaul the simulation to make use
+        of pressure and forces in order to make a somewhat convincing simulation.<br>
+        At the time I didn't quite understand how much of an undertaking it would turn out to be, however, this ended up being what I worked on for the rest of the project.
+      </p>
+      <p>
+        Starting out this seemed like a fun and interesting challenge, I had learned a decent amount of physics during both my education in upper secondary school, and 
+        during the time I spent at university. And while I hadn't learned much about the physics of fluids, this still seemed like a very interesting challenge which would 
+        build on things I had learned and wasn't sure I'd be able to make use of.<br>
+        In order to try to implement pressure I started to look for ways of calculating it, I was certainly aware of the classic method of measuring the pressure at a given 
+        depth under water, but I was not sure how I'd be able to determine how much uninterupted fluid existed above any given point, as such I quickly started experimenting
+        with the bulk modulus, which is a property describing how a change in volume corresponds with a change in pressure, which then lead me to finding out about 
+        compressibility.<br>
+        This felt like a more easily applicable unit for measuring the change of pressure, and so I got to work experimenting, trying to implement compressibility in 
+        conjunction with gravity, to try to simulate the incompressibility of the fluid. However after a few days I just couldn't seem to get this method working, and had
+        to come to the conclusion that it was unlikely to work out, making use of the compressibility of a fluid caused a lot of complications regarding fluid flowing into 
+        empty cells, and out of ones which were previously filled.<br>
+        This caused issues since compressibility requires a measuring of the change of volume, or density, of a substance, this means that it wasn't really possible to 
+        calculate pressure in a cell which was previously empty, this wasn't in itself too bad, since an empty cell wouldn't be exerting a meaningful pressure 
+        against neighboring cells which did contain fluid, so this wasn't too bad, but it meant I lacked a good baseline for pressure in cells, and the issue with 
+        fluid leaving a cell complicated things a lot. <br>
+        The formula for getting the change in pressure was a matter of multiplying the compressibility of the fluid with the change in density of the fluid divided by 
+        the initial density before this change. This meant that as a cell got closer to getting empty, it was resulting in a massive negative pressure which made it 
+        impossible for fluid to flow properly.<br>
+        <br>
+        Having come to the conclusion that I would not be able to get that working I ended up turning back to a more classic calculation, and tried to implement a 
+        method of calculating the pressure based on the force exerted upon a cell by nearby cells, I concluded that by calculating the net forces acting upon a cell
+        I could use that to calculate the pressure in it, since pressure is defined as Force/Area, so I got to work with trying to get that working.<br>
+        After a decent amount of effort I arrived at a point of getting some surprisingly fluid movement from the simulation, it still struggled with pressures and 
+        forces failing to calculate correctly, especially at the positive edges of the grid, and that's where my project is currently at, I am planning to continue 
+        working on it whenever I have the time to, but I am very happy to have been able to create some form of fluid interactions in a 3d grid, even if it's a 
+        lot less in depth than I had originally planned.
       </p>
     </div>
     
