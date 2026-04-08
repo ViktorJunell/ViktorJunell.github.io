@@ -201,6 +201,7 @@ p {
   flex-wrap: wrap;
   margin-top: 1%;
   margin-bottom: 1%;
+  align-items: center;
   /* width: auto; */
 }
 
@@ -210,5 +211,6 @@ p {
   justify-content: center;
   margin-top: 1%;
   margin-bottom: 1%;
+  align-items: center;
   /* width: auto; */
 }
