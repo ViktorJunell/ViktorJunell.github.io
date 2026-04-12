@@ -77,6 +77,10 @@ p {
   display: flex;
   flex-direction: column;
   
+  min-width: 400px; 
+  margin: 1%;
+  /* justify-self: center; */
+  
   justify-content: center;
   align-items: normal;
   text-align: center;
@@ -203,6 +207,14 @@ p {
   margin-bottom: 1%;
   align-items: center;
   /* width: auto; */
+}
+
+.row img {
+  margin-left: 2%; 
+  margin-right: 2%; 
+  min-width: 400px; 
+  max-width: 40%; 
+  justify-self: center;
 }
 
 .column {
