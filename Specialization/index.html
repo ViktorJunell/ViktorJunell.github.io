@@ -42,6 +42,23 @@
         would've resulted in a transparent block which caused you to see through parts of the fluid which were meant to be full, or every cell which contained any fluid would've 
         appeared like a full block, potentially causing flickering when small amounts are pushed in and back out of cells.
       </p>
+      <div class="row">
+        <div class="column" style="width: min-content;">
+          <img src="Raytracing1.png" class="left">
+          <img src="Raytracing2.png" class="left">
+        </div>
+        <p style="width: 50%;">
+          This was the main loop of the resulting pixel shader, it simply iterates through, checking each cell in the grid one after the other, until it either has encountered enough 
+          fluid to be fully coloured in, until it exits the grid, or until it has traveled for double the Z-length of the grid, which is mostly there to set an upper bound which 
+          doesn't cut off a large portion of the grid from being visible.<br>
+          Could probably rework it to check a certain number of cells instead, but it just doesn't seem like a relevant thing to focus on at the moment.<br>
+          <br>
+          It also includes a seperate rendering mode implemented later on for showing the pressure at any given cell, so as to assist in debugging strange behaviour regarding pressure.<br>
+          <br>
+          After every iteration we calculate in which direction the next cell we will reach is, and move our ray forwards towards that. We multiply the factor with 1.01 so as to ensure
+          that we don't accidentally end up at the border of a cell and calculate for the same cell again by simply stepping a little bit further forwards. 
+        </p>
+      </div>
       <p>
         After implementing the new rendering system I got to work on trying to adapt the simulation to 3d more properly, and here I did end up encountering some issues. The 
         videos I had used as a reference were conclusively focused on fluid simulations within an enclosed area, where the whole thing was filled with the same fluid,
