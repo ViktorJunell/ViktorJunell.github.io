@@ -5,6 +5,7 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   color: #bce1ff;
+  text-align: center;
 }
 
 body {
@@ -221,6 +222,8 @@ p {
   min-width: 400px; 
   max-width: 40%; 
   justify-self: center;
+  align-self: center;
+  height: fit-content;
 }
 
 .column {
