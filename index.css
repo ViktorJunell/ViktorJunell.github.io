@@ -201,12 +201,18 @@ p {
 .row {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: top;
   flex-wrap: wrap;
   margin-top: 1%;
   margin-bottom: 1%;
-  align-items: center;
+  align-items: top;
   /* width: auto; */
+}
+
+.row p {
+  width: 80%;
+  /* justify-self: center; */
+  /* align-self: center; */
 }
 
 .row img {
@@ -220,7 +226,7 @@ p {
 .column {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   margin-top: 1%;
   margin-bottom: 1%;
   align-items: center;

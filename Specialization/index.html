@@ -30,6 +30,52 @@
         easy to start out creating a working baseline 2d fluid simulation, admittedly it was a simulation of fluid in a fully enclosed space, 
         which wasn't the goal I had in mind, but it made for a great start.
       </p>
+      <div class="row">
+        <video width="60%" style="min-width: 512;" controls>
+          <source src="2d-simulation.mp4" type="video/mp4">
+          Your browser does not support the usage of videos.
+        </video>
+        <p style="width: 30%;">
+          This is the result of the 2d-Simulation, it works by solving for incompressibility first, using a basic implementation of 
+          a red-black Gauss-Seidel algorithm, meaning we update cells at odd indices first, then we update cells at even indices, reducing
+          inconsistent behaviour where different parts of the grid behave inconsistently, and using overrelaxation to speed up how fast it 
+          reaches equilibrium, I'll elaborate on this a little bit further down.<br>
+          Then after solving that I advect the velocities in the grid by calculating the average velocity in the position which the edge 
+          position would've come from, and setting the current velocity to that, I'll also elabortate on this right below.<br>
+          <br>
+          Right below here are two videos, showing the Gauss-Seidel implementation, and the fluid advection in a step by step, it's not 
+          as smooth since each step is triggered by the push of a button.
+        </p>
+      </div>
+      <div class="row">
+        <div class="column" style="width: 50%;">
+          <video width="90%" style="min-width: 512;" controls>
+            <source src="2d-Gauss-Seidel.mp4" type="video/mp4">
+            Your browser does not support the usage of videos.
+          </video>
+          <p>
+            This is the Gauss-Seidel implementation I landed on, as you can see the velocities wiggle a bit as it progresses, this is a result
+            of the usage of overrelaxation, overrelaxation as far as I understand it simply means multiplying the output of a Gauss-Seidel step
+            by a number between 1 and 2, this has the effect of exagerating all the effects of the Gauss-Seidel, which causes the effects of the 
+            velocity balancing to spread out through the grid quicker, instead of being stuck in one part for a long time.<br>
+          </p>
+        </div>
+        <div class="column" style="width: 50%;">
+          <video width="90%" style="min-width: 512;" controls>
+            <source src="2d-velocity.mp4" type="video/mp4">
+            Your browser does not support the usage of videos.
+          </video>
+          <p>
+            This shows the advection of my fluid, let's consider a vertical edge for the sake of explaining how it works, this edge stores the 
+            x-velocity between the two cells it borders, we calculate the average y-velocity of the closest 4 horizontal edges, which becomes the 
+            y-velocity we will use, and we simply use the current x-velocity.<br>
+            From here we subract the combined velocity multiplied by the frame time from the current position, which gets our previous position,
+            then from this position we calculate the average x-velocity of the closest 4 vertical edges, and this is what we use as the new velocity.<br>
+            This solution ends up resulting in velocity decaying away, and in velocity advection for movement in diagonal directions spreadting out
+            the velocity more, but this seemed as a decent proof of concept, considering I was planning to move on to 3d.
+          </p>
+        </div>
+      </div>
       <p>
         My next step was to adapt this simulation to 3d, in order to do so I ended up having to do a bunch of work optimizing the simulation, one of the main issues was
         overhauling the rendering. At the time I had been using a method of rendering which made use of build in functions in the engine provided by the school to draw lines
