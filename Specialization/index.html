@@ -30,6 +30,17 @@
         easy to start out creating a working baseline 2d fluid simulation, admittedly it was a simulation of fluid in a fully enclosed space, 
         which wasn't the goal I had in mind, but it made for a great start.
       </p>
+      <br>
+      <br>
+      <p style="width: 80%;" class="center">
+        Below are a few Videos to illustrate the functioning of the 2d-simulation, the grid shows all the different cells in the fluid, 
+        the edges between cells each have a line which illustrates the velocity of the fluid at that point, I kept it graphically minimal 
+        for the sake of making things easy, considering the 2d simulation wasn't going to last.<br> 
+        There was also a rendering mode which would
+        colour a circle in the middle of a cell depending on if the net flow of fluid into and out of it is positive or negative, which I'll 
+        show off at the bottom of this section, though it did impact framerates, which is why it's off in the other videos, it also didn't work
+        well with velocity advection, since the imcompressibility didn't account for that.
+      </p>
       <div class="row">
         <video width="60%" style="min-width: 512;" controls>
           <source src="2d-simulation.mp4" type="video/mp4">
@@ -76,6 +87,28 @@
           </p>
         </div>
       </div>
+
+      <div class="column">
+        <p>
+          As you can see the fps dropped significantly, but regardless, the blue cells have more fluid entering them than leaving them, 
+          the red ones have more leaving them than entering them, and the white ones are basically balanced.<br>
+          The goal of the Gauss-Seidel step is balance all the velocities such that all the cells become neutral, which as stated is
+          indicated by them having white circles. This process is sped up by the overrelaxation, since it spreads out all the velocities 
+          across the grid faster, ensuring that more distant parts don't wait for as long to balance out.<br>
+          This also results in some flickering where cells overadjust, but this doesn't really matter much, since they will end up reaching
+          equilibrium regardless, though it is slightly visually offputting.<br>
+          <br>
+          I don't believe it is likely to cause an epileptic attack, considering the small size of the circles, though I am certainly not very
+          knowledgable on that, so if you are sensitive to that you can use the video controls to make it easier for you.
+        </p>
+        <video class="center" width="80%" style="min-width: 512;" controls>
+          <source src="2d-Advection-Visual.mp4" type="video/mp4">
+          Your browser does not support the usage of videos.
+        </video>
+      </div>
+
+      <div style="height: 100px;"></div>
+
       <p>
         My next step was to adapt this simulation to 3d, in order to do so I ended up having to do a bunch of work optimizing the simulation, one of the main issues was
         overhauling the rendering. At the time I had been using a method of rendering which made use of build in functions in the engine provided by the school to draw lines
