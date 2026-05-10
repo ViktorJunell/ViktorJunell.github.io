@@ -90,6 +90,7 @@ p {
   margin-right: auto;
   width: 30%;
   border-radius: 5%;
+  height: fit-content;
 
   cursor: pointer;
 }
@@ -219,8 +220,8 @@ p {
 .row img {
   margin-left: 2%; 
   margin-right: 2%; 
-  min-width: 400px; 
-  max-width: 40%; 
+  min-width: 30%; 
+  max-width: 100%; 
   justify-self: center;
   align-self: center;
   height: fit-content;

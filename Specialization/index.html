@@ -122,11 +122,11 @@
         appeared like a full block, potentially causing flickering when small amounts are pushed in and back out of cells.
       </p>
       <div class="row">
-        <div class="column" style="width: min-content;">
-          <img src="Raytracing1.png" class="left">
-          <img src="Raytracing2.png" class="left">
+        <div class="column" style="width: 40%">
+          <img src="Raytracing1.png">
+          <img src="Raytracing2.png">
         </div>
-        <p style="width: 50%;">
+        <p style="width: 40%;">
           This was the main loop of the resulting pixel shader, it simply iterates through, checking each cell in the grid one after the other, until it either has encountered enough 
           fluid to be fully coloured in, until it exits the grid, or until it has traveled for double the Z-length of the grid, which is mostly there to set an upper bound which 
           doesn't cut off a large portion of the grid from being visible.<br>

@@ -50,8 +50,8 @@
       </p>
 
       <div class="row">
-        <img src="AudioPlayerInterface.png" width="150%" class="left">
-        <p>
+        <img src="AudioPlayerInterface.png" width="50%" class="left">
+        <p style="width: 40%;">
           This was the interface I landed on in the end, it ended up including some useful functions for most circumstances that were likely to show up during gameplay.<br>
           The least obvious functions I imagine is the ones regarding triggers, they were implemented as a way to trigger changes in the music states during gameplay, 
           this was used in order to modify the music in different sections of levels. You'd simply have to register a trigger's name to an en Entity ID, then when it was
@@ -62,8 +62,8 @@
       </div>
         
       <div class="row">
-        <img src="UpdateSound.png" width="300%" class="left">  
-        <p>
+        <img src="UpdateSound.png" width="60%" class="left">  
+        <p style="width: 20%;">
           UpdateSound() was the function used to both update the position of the player, and the audio source used for testing spatial audio. In retrospect I realize
           that the test audio portion should likely have been nested in a #if statement to ensure it's not included in retail builds, as it is inaccessible there regardless.<br>
           Other than that it updated the game volume, which included a simple implementation of a debug menu for handling audio things, and then rendered the audio itself in Wwise.
@@ -71,8 +71,8 @@
       </div>
 
       <div class="row">
-        <img src="StopSound.png" width="140%"  class="left">  
-        <p style="width: 100%">
+        <img src="StopSound.png" width="30%">  
+        <p style="width: 20%">
           This is a bit of an example regarding problem solving necessary due to the lack of time available for development, since I had never made use of Wwise before I 
           ended up struggling to understand many things, and as a part of that I somehow missed out on how to stop individual sounds. As you could imagine this would present 
           a bit of a problem in any game.<br>
@@ -80,8 +80,8 @@
           which stopped the different categories of sound we made use of, and as such I was able to implement this simple function which could stop any category of sound based 
           on an enum input.
         </p>
-        <div class="column" width="100%">
-          <img src="AudioCallback.png" width="100%" class="center">  
+        <div class="column" style="width: 42%;">
+          <img src="AudioCallback.png">  
           <p>
             One thing which I was initially unfamiliar with but managed to figure out in time was the usage of callbacks for audio objects. This was a relatively necessary thing,
             since I didn't want sounds to move along with entities for things like footsteps and jump attacks, as these would sound really strange if they were moved during activation.
@@ -94,7 +94,7 @@
 
       <div class="row">
         <img src="Hitboxes.gif" style="width:512px; margin:1%">
-        <p>
+        <p style="width: 40%">
           My other major focus was on developing the boss fight, the boss was a large snake-like dragon, which would slither over the stage in between executing
           various attacks. This meant needing to figure out how to blend together various different attacks, and very importantly, making sure that the boss' hitboxes
           would move along with the boss, such that the player would not end up swinging at the boss, and missing simply because the hitbox didn't match the physical model.<br>
