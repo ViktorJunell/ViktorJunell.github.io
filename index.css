@@ -209,6 +209,8 @@ p {
   margin-bottom: 1%;
   align-items: top;
   /* width: auto; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .row p {
